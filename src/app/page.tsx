@@ -7,7 +7,7 @@ export default function Home() {
         <Image
           className="dark:invert"
           src="/icon.png"
-          alt="Next.js logo"
+          alt="tfcomposite logo"
           width={80}
           height={80}
           priority
