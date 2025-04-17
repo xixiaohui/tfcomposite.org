@@ -9,14 +9,8 @@ import { Card } from "@/components/ui/card";
 import RightSidebarFRPChecklist from "@/components/right-sidebar-frp-checklist";
 
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
 // eslint-disable-next-line @next/next/no-async-client-component
-export default async function CardDetailPage({ params }: Props) {
+export default async function CardDetailPage({ params }: { params: { id: string } }) {
   const card = await getCardById(params.id);
 
   if (!card) return notFound();
