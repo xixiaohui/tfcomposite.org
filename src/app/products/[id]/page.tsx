@@ -8,13 +8,13 @@ import { Card } from "@/components/ui/card";
 
 import RightSidebarFRPChecklist from "@/components/right-sidebar-frp-checklist";
 
-interface PageProps {
+type Props = {
   params: { id: string };
   searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
 // eslint-disable-next-line @next/next/no-async-client-component
-export default async function CardDetailPage({ params }: PageProps) {
+export default async function CardDetailPage({ params }: Props) {
   const card = await getCardById(params.id);
 
   if (!card) return notFound();
