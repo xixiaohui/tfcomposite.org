@@ -4,11 +4,14 @@ import { NextResponse } from 'next/server';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
-  const card = await getCardById(params.id);
+  const { id } = context.params; // ✅ Proper way to access params
+  const card = await getCardById(id);
+
   if (!card) {
     return NextResponse.json({ error: 'Not found' }, { status: 404 });
   }
+
   return NextResponse.json(card);
 }
