@@ -2,9 +2,16 @@
 import { getCardById } from '@/lib/data'
 import { NextRequest, NextResponse } from 'next/server'
 
+
+type Params = {
+  params: {
+    id: string
+  }
+}
+
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: Params
 ){
   const { id } = await context.params
   const card = getCardById(id)
