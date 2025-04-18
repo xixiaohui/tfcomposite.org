@@ -3,15 +3,10 @@ import { getCardById } from '@/lib/data'
 import { NextRequest, NextResponse } from 'next/server'
 
 
-type Params = {
-  params: {
-    id: string
-  }
-}
 
 export async function GET(
   request: NextRequest,
-  context: Params
+  context: { params: { id: string } }
 ){
   const { id } = await context.params
   const card = getCardById(id)
