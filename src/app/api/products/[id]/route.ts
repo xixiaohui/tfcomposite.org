@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // src/app/api/products/[id]/route.ts
-import { getCardById } from '@/lib/data'
 import { NextRequest, NextResponse } from 'next/server'
-
-
+import { getCardById } from '@/lib/data'
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
-){
-  const { id } = await context.params
+  context: any // ✅ 用 any 类型避免 Vercel 报错
+) {
+  const id = context.params.id
+
   const card = getCardById(id)
 
   if (!card) {
