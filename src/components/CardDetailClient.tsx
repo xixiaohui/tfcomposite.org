@@ -9,6 +9,8 @@ import { Card } from '@/components/ui/card';
 import RightSidebarFRPChecklist from '@/components/right-sidebar-frp-checklist';
 import Link from 'next/link';
 
+
+
 interface CardData {
   id: string;
   title: string;
@@ -31,7 +33,13 @@ export default function CardDetailClient() {
     fetchData();
   }, [id]);
 
+
+ 
+
   if (!card) return <div className="p-4 text-center">Loading...</div>;
+
+ 
+
 
   return (
     <ThreeColumnLayout
@@ -44,6 +52,9 @@ export default function CardDetailClient() {
           />
           <h1 className="text-2xl font-bold mb-4">{card.title}</h1>
           <p className="text-base text-gray-700">{card.content}</p>
+
+         
+         
         </main>
       }
       right={

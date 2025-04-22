@@ -1,12 +1,10 @@
-"use client"
 
-import dynamic from 'next/dynamic';
 
-// 动态导入 Client 组件
-const CardDetailClient = dynamic(() => import('@/components/CardDetailClient'), {
-  ssr: false,
-});
+import CardDetailClient from "@/components/CardDetailClient"
 
-export default function Page() {
-  return <CardDetailClient />;
+export default async function ProductPage() {
+  
+  return (
+    <CardDetailClient />
+  );
 }
