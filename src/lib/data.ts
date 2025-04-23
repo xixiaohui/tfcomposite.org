@@ -1,35 +1,35 @@
 export const items = [
   {
     id: "1",
-    title: "38*38mm MESH SIZE",
+    title: "MOULDED GRATING 38*38mm MESH SIZE",
     content:
       "Durable FRP grating with 38×38mm mesh for high strength, corrosion resistance, and slip resistance in industrial environments.",
     image: "/images/1.webp",
   },
   {
     id: "2",
-    title: "40*40mm MESH SIZE",
+    title: "MOULDED GRATING 40*40mm MESH SIZE",
     content:
       "Durable FRP grating with 40×40mm mesh for high strength, corrosion resistance, and slip resistance in industrial environments.",
     image: "/images/2.webp",
   },
   {
     id: "3",
-    title: "50*50mm MESH SIZE",
+    title: "MOULDED GRATING 50*50mm MESH SIZE",
     content:
       "Durable FRP grating with 50×50mm mesh for high strength, corrosion resistance, and slip resistance in industrial environments.",
     image: "/images/3.webp",
   },
   {
     id: "4",
-    title: "19*19mm MESH SIZE",
+    title: "MOULDED GRATING 19*19mm MESH SIZE",
     content:
       "Durable FRP grating with 19×19mm mesh for high strength, corrosion resistance, and slip resistance in industrial environments.",
     image: "/images/4.webp",
   },
   {
     id: "5",
-    title: "20*20mm MESH SIZE",
+    title: "MOULDED GRATING 20*20mm MESH SIZE",
     content:
       "Durable FRP grating with 20×20mm mesh for high strength, corrosion resistance, and slip resistance in industrial environments.",
     image: "/images/5.webp",

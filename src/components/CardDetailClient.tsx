@@ -9,7 +9,7 @@ import { Card } from '@/components/ui/card';
 import RightSidebarFRPChecklist from '@/components/right-sidebar-frp-checklist';
 import Link from 'next/link';
 
-
+import Fiberglass from "@/content/products/frp-grating.mdx"
 
 interface CardData {
   id: string;
@@ -51,9 +51,9 @@ export default function CardDetailClient() {
             className="w-full h-auto rounded-md mb-4"
           />
           <h1 className="text-2xl font-bold mb-4">{card.title}</h1>
-          <p className="text-base text-gray-700">{card.content}</p>
+          {/* <p className="text-base text-gray-700">{card.content}</p> */}
 
-         
+          <Fiberglass />
          
         </main>
       }
