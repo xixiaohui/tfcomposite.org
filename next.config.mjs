@@ -12,9 +12,8 @@ const nextConfig = withMdx({
   pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
 
   experimental: {
-    css: {
-      loader: 'postcss',
-    },
+    // This disables the use of LightningCSS for builds (Next.js 15+)
+    legacyCss: true,
   },
 })
 
