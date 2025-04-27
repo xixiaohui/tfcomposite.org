@@ -23,13 +23,8 @@ interface CardData {
   image: string;
 }
 
-interface CardDetailClientProps {
-  product_id: string;
-}
 
-export default function CardDetailClient({
-  product_id,
-}: CardDetailClientProps) {
+export default function CardDetailClient() {
   const [mdxSource, setMdxSource] = useState<MDXRemoteSerializeResult | null>(
     null
   );
@@ -50,14 +45,14 @@ export default function CardDetailClient({
 
   useEffect(() => {
     async function fetchMdx() {
-      const res = await fetch(`/api/mdx/${product_id}`);
+      const res = await fetch(`/api/mdx/${id}`);
       const data = await res.json();
       if (data?.mdxSource?.compiledSource) {
         setMdxSource(data.mdxSource);
       }
     }
     fetchMdx();
-  }, [product_id]);
+  }, [id]);
 
   if (!card) return <div className="p-4 text-center">Loading...</div>;
 

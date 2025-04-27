@@ -4,11 +4,16 @@ import fs from "fs/promises"
 import path from "path"
 import { MDXRemoteSerializeResult } from "next-mdx-remote"
 
+// 自定义 ParamsContext
+interface ParamsContext {
+  params: Promise<{ id: string }>
+}
+
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: ParamsContext
 ) {
-  const { id } = await params
+  const { id } = await context.params // 异步等待 params
 
   try {
     const filePath = path.join(process.cwd(), "src/content/products", `${id}.mdx`)

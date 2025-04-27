@@ -4,13 +4,13 @@ import CardDetailClient from "@/components/CardDetailClient"
 
 
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage() {
 
-  const { id } = await params
+
   
   return (
     <div>
-      <CardDetailClient product_id = {id} />
+      <CardDetailClient />
 
       
     </div>
