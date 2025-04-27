@@ -15,6 +15,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { useMDXComponents } from "@/mdx-components";
 import WhatsAppQRCode from "@/components/WhatsAppQRCode"
 
+import {CarouselPlugin} from "@/components/carousel-plugin"
 
 interface CardData {
   id: string;
@@ -71,7 +72,10 @@ export default function CardDetailClient() {
           {/* <h1 className="text-2xl font-bold mb-4">{card.title}</h1> */}
           {/* <p className="text-base text-gray-700">{card.content}</p> */}
 
-          
+
+          <div>
+            <CarouselPlugin />
+          </div>
           <div className="prose prose-lg">
             <MDXRemote {...mdxSource} components={useMDXComponents} />
 
