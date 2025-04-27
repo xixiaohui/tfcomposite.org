@@ -64,7 +64,7 @@ export const items = [
   },
 ];
 
-export function getCardById(id: string) {
+export async function getCardById(id: string) {
   return items.find((item) => item.id === id) || null;
 }
 

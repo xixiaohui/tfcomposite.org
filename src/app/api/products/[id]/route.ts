@@ -1,18 +1,21 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// src/app/api/products/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { getCardById } from '@/lib/data'
 
-export async function GET(
-  request: NextRequest,
-  context: any // ✅ 用 any 类型避免 Vercel 报错
-) {
-  const id = context.params.id
+// 自定义 ParamsContext
+interface ParamsContext {
+  params: Promise<{ id: string }>
+}
 
-  const card = getCardById(id)
+export async function GET(
+  req: NextRequest,
+  context: ParamsContext
+) {
+  const { id } = await context.params // 异步等待 params
+
+  const card = await getCardById(id)
 
   if (!card) {
-    return NextResponse.json({ error: 'Not found' }, { status: 404 })
+    return NextResponse.json({ error: 'Not Found' }, { status: 404 })
   }
 
   return NextResponse.json(card)
