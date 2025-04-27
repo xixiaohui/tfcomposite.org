@@ -6,14 +6,14 @@ export default function WhatsAppQRCode() {
       <h2 className="text-2xl font-bold mb-4 text-green-600">Scan to Contact Us on WhatsApp!</h2>
       <div className="w-48 h-48 relative mb-4">
         <Image
-          src="/images/whatsapp_qr.png" // 👉 记得把你的二维码图片放到 public 文件夹里
+          src="/images/whatsapp_qr.png"
           alt="WhatsApp QR Code"
           fill
           className="rounded-lg object-cover border border-gray-300"
         />
       </div>
       <p className="text-gray-600 text-center">
-        Open your WhatsApp app, tap on "Scan QR Code" and connect with us instantly!
+        Open your WhatsApp app, tap on &quot;Scan QR Code&quot; and connect with us instantly!
       </p>
     </div>
   )
