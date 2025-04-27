@@ -13,7 +13,7 @@ import Fiberglass from "@/content/products/frp-grating.mdx";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { useMDXComponents } from "@/mdx-components";
-
+import WhatsAppQRCode from "@/components/WhatsAppQRCode"
 
 
 interface CardData {
@@ -88,6 +88,10 @@ export default function CardDetailClient() {
           >
             Request Quote
           </Link>
+
+          <div className="max-w-md mx-auto mt-10">
+            <WhatsAppQRCode />
+          </div>
         </Card>
       }
     />
