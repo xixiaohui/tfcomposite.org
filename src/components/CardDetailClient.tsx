@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card";
 import RightSidebarFRPChecklist from "@/components/right-sidebar-frp-checklist";
 import Link from "next/link";
 
-// import Fiberglass from "@/content/products/frp-grating.mdx";
+import Fiberglass from "@/content/products/frp-grating.mdx";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
 import { useMDXComponents } from "@/mdx-components";
@@ -68,12 +68,14 @@ export default function CardDetailClient() {
             alt={card.title}
             className="w-full h-auto rounded-md mb-4"
           />
-          <h1 className="text-2xl font-bold mb-4">{card.title}</h1>
+          {/* <h1 className="text-2xl font-bold mb-4">{card.title}</h1> */}
           {/* <p className="text-base text-gray-700">{card.content}</p> */}
 
-          {/* <Fiberglass /> */}
+          
           <div className="prose prose-lg">
             <MDXRemote {...mdxSource} components={useMDXComponents} />
+
+            <Fiberglass />
           </div>
         </main>
       }

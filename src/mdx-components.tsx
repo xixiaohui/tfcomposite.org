@@ -4,6 +4,8 @@ import Image, { ImageProps } from 'next/image'
 
 import {DownloadPDF} from './components/DownloadPDF'
 import {ProductSpecsTable}  from './components/ProductSpecsTable'
+
+
  
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -53,6 +55,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     DownloadPDF: DownloadPDF,
 
     ProductSpecsTable:ProductSpecsTable,
+
     ...components,
   }
 }
