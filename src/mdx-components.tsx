@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import type { MDXComponents } from 'mdx/types'
 import Image, { ImageProps } from 'next/image'
+
+import {DownloadPDF} from './components/DownloadPDF'
+import {ProductSpecsTable}  from './components/ProductSpecsTable'
  
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -11,7 +14,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => (
-      <h1 style={{ color: 'blue', fontSize: '36px' }}>{children}</h1>
+      <h2 className="text-3xl font-semibold text-black mt-5 mb-3">{children}</h2>
     ),
     h2: ({ children }) => (
       <h2 className="text-2xl font-semibold text-black mt-5 mb-3">{children}</h2>
@@ -46,6 +49,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...(props as ImageProps)}
       />
     ),
+
+    DownloadPDF: DownloadPDF,
+
+    ProductSpecsTable:ProductSpecsTable,
     ...components,
   }
 }
