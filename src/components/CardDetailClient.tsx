@@ -50,14 +50,14 @@ export default function CardDetailClient({
 
   useEffect(() => {
     async function fetchMdx() {
-      const res = await fetch(`/api/mdx/${id}`);
+      const res = await fetch(`/api/mdx/${product_id}`);
       const data = await res.json();
       if (data?.mdxSource?.compiledSource) {
         setMdxSource(data.mdxSource);
       }
     }
     fetchMdx();
-  }, [id]);
+  }, [product_id]);
 
   if (!card) return <div className="p-4 text-center">Loading...</div>;
 
