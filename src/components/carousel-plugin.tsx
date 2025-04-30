@@ -39,7 +39,7 @@ export function CarouselPlugin({ id }: MyComponentProps) {
               
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{wrapToRange1To4(numericId)}</span>
+                    {/* <span className="text-4xl font-semibold">{wrapToRange1To4(numericId)}</span> */}
                     <Image
                       key={index}
                       src={`/productsImage/${ index + 1 + offset }.webp`}
