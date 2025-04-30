@@ -18,12 +18,20 @@ import WhatsAppQRCode from "@/components/WhatsAppQRCode"
 import {CarouselPlugin} from "@/components/carousel-plugin"
 
 import Image from 'next/image'
+import Script from 'next/script';
 
 interface CardData {
   id: string;
   title: string;
   content: string;
   image: string;
+}
+
+// 声明 window 方法（方式 2）
+declare global {
+  interface Window {
+    gtag_report_conversion: (url: string) => void;
+  }
 }
 
 
@@ -57,6 +65,12 @@ export default function CardDetailClient() {
     fetchMdx();
   }, [id]);
 
+  const handleClick = () => {
+    // 你可以选择添加一个跳转链接，例如：
+    const targetUrl = 'mailto:someone@example.com';
+    window.gtag_report_conversion(targetUrl);
+  };
+
   if (!card) return <div className="p-4 text-center">Loading...</div>;
 
   if (!mdxSource) return <div className="p-4 text-center">Loading...</div>;
@@ -89,13 +103,34 @@ export default function CardDetailClient() {
         </main>
       }
       right={
+
         <Card className="p-4">
           <RightSidebarFRPChecklist />
+          
+          {/* 注入脚本代码（只加载一次） */}
+          <Script id="gtag-conversion" strategy="afterInteractive">
+            {`
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-16665079521/u_M5CJbj5MgZEOHdw4o-',
+                  'event_callback': callback
+                });
+                return false;
+              }
+            `}
+          </Script>
+          
           <Link
+            onClick={handleClick}
             href="mailto:sales@tfcomposite.com"
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
           >
-            Request Quote
+              Request Quote
           </Link>
 
           <div className="max-w-md mx-auto mt-10">
