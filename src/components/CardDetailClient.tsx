@@ -65,8 +65,8 @@ export default function CardDetailClient() {
     <ThreeColumnLayout
       center={
         <main className="p-4 max-w-2xl mx-auto">
-          <div>
-            <CarouselPlugin />
+          <div className="w-2/3 mx-auto mb-7">
+            <CarouselPlugin id={id}/>
           </div>
 
           <Image
@@ -92,7 +92,7 @@ export default function CardDetailClient() {
         <Card className="p-4">
           <RightSidebarFRPChecklist />
           <Link
-            href="mailto:info@tfcomposite.org"
+            href="mailto:sales@tfcomposite.com"
             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
           >
             Request Quote

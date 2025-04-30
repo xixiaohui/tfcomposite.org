@@ -8,8 +8,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 import Image from 'next/image'
 
-export function CarouselPlugin() {
-  const plugin = React.useRef(Autoplay({ delay: 2000, stopOnInteraction: true }))
+interface MyComponentProps {
+  id: string
+}
+
+export function CarouselPlugin({ id }: MyComponentProps) {
+
+  const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }))
+
+  const numericId = Number(id)
+  const wrapToRange1To4 = (n: number) => {
+    return ((n - 1) % 4 + 4) % 4 + 1
+  }
+  const offset = 5 * (wrapToRange1To4(numericId)-1) 
 
   return (
     <Carousel
@@ -19,16 +30,19 @@ export function CarouselPlugin() {
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
+
+        
         {Array.from({ length: 5 }).map((_, index) => (
           
           <CarouselItem key={index}>
             <div className="p-1">
+              
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  {/* <span className="text-4xl font-semibold">{index + 1}</span> */}
+                    <span className="text-4xl font-semibold">{wrapToRange1To4(numericId)}</span>
                     <Image
                       key={index}
-                      src={`/productsImage/${index + 1}.jpg`}
+                      src={`/productsImage/${ index + 1 + offset }.webp`}
                       alt="tf composite frp grating"
                       className="w-full h-auto rounded-lg mb-4"
                       width={1000}
