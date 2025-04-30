@@ -17,6 +17,8 @@ import WhatsAppQRCode from "@/components/WhatsAppQRCode"
 
 import {CarouselPlugin} from "@/components/carousel-plugin"
 
+import Image from 'next/image'
+
 interface CardData {
   id: string;
   title: string;
@@ -63,19 +65,22 @@ export default function CardDetailClient() {
     <ThreeColumnLayout
       center={
         <main className="p-4 max-w-2xl mx-auto">
-          {/* <h1>Product ID: {product_id}</h1> */}
-          <img
+          <div>
+            <CarouselPlugin />
+          </div>
+
+          <Image
             src={card.image}
             alt={card.title}
-            className="w-full h-auto rounded-md mb-4"
+            className="w-full h-auto rounded-lg mb-4"
+            width={1240}
+            height={1770}
           />
           {/* <h1 className="text-2xl font-bold mb-4">{card.title}</h1> */}
           {/* <p className="text-base text-gray-700">{card.content}</p> */}
 
 
-          <div>
-            <CarouselPlugin />
-          </div>
+          
           <div className="prose prose-lg">
             <MDXRemote {...mdxSource} components={useMDXComponents} />
 
