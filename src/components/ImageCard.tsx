@@ -19,11 +19,11 @@ export default function CardDialogPage() {
 
   return (
     <main className="p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">
+      <h1 className="text-2xl font-bold mb-4 text-center animate-fadeIn">
         FRP Moulded Grating Manufacturer
       </h1>
-      <h2 className="text-xl font-bold mb-4 text-center">
-        Anhui Tianfu New Material co., Ltd
+      <h2 className="text-xl font-bold mb-4 text-center animate-fadeIn">
+        Anhui Tianfu New Material Co., Ltd
       </h2>
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {data

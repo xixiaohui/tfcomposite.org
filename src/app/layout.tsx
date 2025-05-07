@@ -53,8 +53,13 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        {children}
-        <Toaster />
+        <div className="flex items-center justify-center">
+          <div className="w-full bg-white/80 backdrop-blur-md shadow-lg">
+            {children}
+            <Toaster />
+          </div>
+        </div>
+        
       </body>
     </html>
   );
