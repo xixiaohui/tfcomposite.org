@@ -17,10 +17,14 @@ export function CarouselPlugin({ id }: MyComponentProps) {
   const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }))
 
   const numericId = Number(id)
-  const wrapToRange1To4 = (n: number) => {
-    return ((n - 1) % 4 + 4) % 4 + 1
+  // const wrapToRange1To4 = (n: number) => {
+  //   return ((n - 1) % 4 + 4) % 4 + 1
+  // }
+  const wrapToRange1To7 = (n: number) => {
+    return ((n - 1) % 7 + 7) % 7 + 1;
   }
-  const offset = 5 * (wrapToRange1To4(numericId)-1) 
+
+  const offset = 5 * (wrapToRange1To7(numericId)-1) 
 
   return (
     <Carousel
