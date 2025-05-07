@@ -34,9 +34,14 @@ export default function CardDialogPage() {
                   className="hover:cursor-pointer hover:shadow-lg transition-shadow"
                 >
                   <img
-                    src={item.image}
+                    src={item.mainImage}
                     alt={item.title}
                     className="w-full h-auto object-cover rounded-t-md"
+                  />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-auto object-cover "
                   />
                   <CardHeader>
                     <CardTitle>{item.title}</CardTitle>
