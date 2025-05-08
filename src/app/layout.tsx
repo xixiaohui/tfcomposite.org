@@ -1,9 +1,13 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 
 import { Toaster } from "sonner";
 import Script from "next/script";
 
-import "./globals.css";
+// import {NavigationMenuDemo} from "@/components//MainMenubar"
+
+
 
 export const metadata: Metadata = {
   title: "FRP Grating – Corrosion Resistant Industrial Flooring",
@@ -53,8 +57,13 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
+ 
+
         <div className="flex items-center justify-center">
           <div className="w-full bg-white/80 backdrop-blur-md shadow-lg">
+            
+       
+            
             {children}
             <Toaster />
           </div>
