@@ -5,16 +5,16 @@ import { Icons } from "@/components/icons"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[50px_1fr_50px] items-center justify-items-center h-screen p-4 md:p-6 pb-40 md:pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
+        {/* <Image
           className="dark:invert"
           src="/icon2.png"
           alt="tfcomposite logo"
           width={80}
           height={80}
           priority
-        />
+        /> */}
         <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
             Looking for a Reliable FRP Grating Supplier?{" "}
@@ -32,7 +32,7 @@ export default function Home() {
             className=" animate-bounce rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
             href="/products"
           >
-            <Icons.logo className="h-7 w-7" />
+            <Icons.logo className="h-4 w-4" />
             Explore Products
     
           </Link>
@@ -49,13 +49,7 @@ export default function Home() {
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="/products"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
+          <Icons.logo className="h-4 w-4" />
           FRP Moulded Grating
         </Link>
         <Link

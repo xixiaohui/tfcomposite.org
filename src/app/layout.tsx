@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import Script from "next/script";
 
-// import {NavigationMenuDemo} from "@/components//MainMenubar"
+import NavMenu from "@/components/MainMenubar"
 
 
 
@@ -61,6 +61,10 @@ export default function RootLayout({
 
         <div className="flex items-center justify-center">
           <div className="w-full bg-white/80 backdrop-blur-md shadow-lg">
+            
+            <div className="w-full md:mx-auto md:w-1/2">
+              <NavMenu />
+            </div>
             
        
             

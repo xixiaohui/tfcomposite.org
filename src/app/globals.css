@@ -124,8 +124,9 @@
 
 body {
   @apply m-0 p-0;
-  background-image: url('/productsImage/23.webp'); /* 用你自己的背景图路径 */
-  background-size: cover;
+  background-image: url('/images/pencil_sketch.webp'); /* 用你自己的背景图路径 */
+  /* background-size: cover; */
   background-position: center;
   background-attachment: fixed;
+  background-repeat: repeat;
 }
